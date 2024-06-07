@@ -1,4 +1,4 @@
-#!/bin/bash -e
+#!/bin/bash -ex
 ################################################################################
 ##  File:  install.sh
 ##  Desc:  Helper functions for installing tools

@@ -1,4 +1,4 @@
-#!/bin/bash -e
+#!/bin/bash -ex
 ################################################################################
 ##  File:  install-cmake.sh
 ##  Desc:  Install CMake

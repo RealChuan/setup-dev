@@ -1,4 +1,4 @@
-#!/bin/bash -e
+#!/bin/bash -ex
 
 # 确保脚本以root权限运行
 if [ "$(id -u)" != "0" ]; then

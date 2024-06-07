@@ -1,4 +1,4 @@
-#!/bin/bash -e
+#!/bin/bash -ex
 ################################################################################
 ##  File:  install-vcpkg.sh
 ##  Desc:  Install vcpkg
