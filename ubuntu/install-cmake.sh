@@ -14,7 +14,7 @@ if command -v cmake; then
     echo "cmake is already installed"
 else
     # Download script to install CMake
-    gcc_target=$(get_gcc_target)
+    gcc_target=$(get_gcc_target) || true
     if [ "${gcc_target}" == "x86_64" ]; then
         cmake_arch="x86_64"
     elif [ "${gcc_target}" == "aarch64" ]; then
@@ -23,7 +23,6 @@ else
         echo "${gcc_target}"
         exit 1
     fi
-
     # Download script to install CMake
     download_url=$(resolve_github_release_asset_url "Kitware/CMake" "endswith(\"inux-${cmake_arch}.sh\")" "latest")
     curl -fsSL "${download_url}" -o cmakeinstall.sh
@@ -35,7 +34,7 @@ else
 
     # Install CMake and remove the install script
     sudo chmod +x cmakeinstall.sh &&
-        ./cmakeinstall.sh --prefix=/usr/local --exclude-subdir &&
+        sudo ./cmakeinstall.sh --prefix=/usr/local --exclude-subdir &&
         rm cmakeinstall.sh
 fi
 
