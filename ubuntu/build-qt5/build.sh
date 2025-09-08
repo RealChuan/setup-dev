@@ -17,7 +17,7 @@ tar -xvf ~/Downloads/${qt-everywhere-src}.tar.xz -C /tmp
 
 echo "获取当前gcc target 信息，配置QT路径"
 
-gcc_target=$(get_gcc_target)
+gcc_target=$(get_gcc_target) || true
 
 if [ "${gcc_target}" == "x86_64" ]; then
     qt_arch="gcc_64"

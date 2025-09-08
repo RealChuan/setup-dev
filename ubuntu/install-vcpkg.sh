@@ -13,7 +13,7 @@ fi
 # Source the helpers for use with the script
 source install.sh
 
-gcc_target=$(get_gcc_target)
+gcc_target=$(get_gcc_target) || true
 if [ "${gcc_target}" != "x86_64" ]; then
     export VCPKG_USE_SYSTEM_BINARIES=1
 fi

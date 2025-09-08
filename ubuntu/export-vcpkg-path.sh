@@ -2,7 +2,7 @@
 
 source install.sh
 
-gcc_target=$(get_gcc_target)
+gcc_target=$(get_gcc_target) || true
 
 if [ "${gcc_target}" == "x86_64" ]; then
     VCPKG_TARGET_TRIPLET="x64-linux"
